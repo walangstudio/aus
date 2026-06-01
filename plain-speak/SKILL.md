@@ -129,9 +129,10 @@ Phrase the explanation inside the listener's everyday world.
 - **Example**
   - In: "'We amortize the cost over the asset's useful life.' wait what?"
   - Out: "It means: instead of recording the whole cost in the year you buy
-    something, you spread it across the years you'll actually use it. Buy a
-    $5,000 machine you'll use for five years, and you count $1,000 as a cost
-    each year. 'Amortize' is just the word for spreading a cost out over time."
+    something, you spread it across the years you'll actually use it. Pay
+    $5,000 for a five-year software license, and you count $1,000 as a cost
+    each year instead of $5,000 up front. 'Amortize' is just the word for
+    spreading a cost out over time."
 
 ### Bullet brief
 - **Tone:** Scannable key points. Each bullet is one self-contained idea, front-
