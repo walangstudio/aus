@@ -1,5 +1,10 @@
 # Artificial Unintelligence Skills
 
+[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/walangstudio/aus/blob/main/VERSION)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
+![Claude Code](https://img.shields.io/badge/Claude%20Code-skill-d97757)
+
 aus! (read as "ayos", Filipino for *all good, sorted*). AI dials its own
 intelligence down to explain things like a normal person instead of a whitepaper.
 
