@@ -50,6 +50,21 @@ You almost never need to name these. Just talk. But here is the full menu.
 | So-what | leads with why you should care, then the details |
 | Unjargon | keeps the one term worth knowing, defines it, evicts the rest |
 
+## Shortcuts
+
+The modes all work by just talking. But the ones you reach for most get a short
+slash command, so you don't have to phrase anything:
+
+| Command | What it does |
+|---------|--------------|
+| `/aus <text>` | explain it like a human, plain English, zero jargon (the everyday one) |
+| `/tldr <text>` | the gist in one to three sentences |
+| `/eli <age> <text>` | explain like I'm that age. `/eli 5`, `/eli 10`, `/eli grandma` |
+| `/huh <text>` | "wait, what?" re-explains the bit that lost you |
+
+Everything else still works by talking normally, or with `/plain-speak`, which
+is the skill itself.
+
 ## Install
 
 The quick way:
@@ -60,20 +75,20 @@ cd aus
 ./install.sh
 ```
 
-That copies the skill into `~/.claude/skills/`. Other options:
+That puts the skill in `~/.claude/skills/` and the slash commands in
+`~/.claude/commands/`. Other options:
 
 ```bash
-./install.sh --project   # into this project's .claude/skills
-./install.sh --dir PATH  # anywhere you want it
+./install.sh --project   # into this project's .claude folder
+./install.sh --dir PATH  # into a .claude folder you choose
 ```
 
-Rather do it by hand? Copy the `plain-speak/` folder into your skills directory
-(`~/.claude/skills/plain-speak/`). Just keep the `SKILL.md` frontmatter intact,
-since the `name` field has to match the folder.
+Rather do it by hand? Copy the `plain-speak/` folder into `~/.claude/skills/`
+and the contents of `commands/` into `~/.claude/commands/`. Just keep the
+`SKILL.md` frontmatter intact, since the `name` field has to match the folder.
 
-Then start a fresh Claude session and ask for something in plain English. The
-skill shows up on its own. You can also trigger it on purpose by typing
-`/plain-speak`.
+Then start a fresh Claude session. Type `/aus` (or `/tldr`, `/eli`, `/huh`), or
+just ask for something in plain English and the skill shows up on its own.
 
 ## Try it
 
