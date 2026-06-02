@@ -64,21 +64,34 @@ $Home_ = if ($env:USERPROFILE) { $env:USERPROFILE } else { $env:HOME }
 # Claude Desktop (and claude.ai) has no drop-in skills folder. You add a skill by
 # uploading a zip of its folder in Settings > Customize > Skills > Create skill.
 if ($Desktop) {
+  Add-Type -AssemblyName System.IO.Compression | Out-Null
+  Add-Type -AssemblyName System.IO.Compression.FileSystem | Out-Null
   foreach ($skill in $Skills) {
-    if (-not (Test-Path (Join-Path $SrcDir "$skill\SKILL.md"))) {
+    $skillDir = Join-Path $SrcDir $skill
+    if (-not (Test-Path (Join-Path $skillDir 'SKILL.md'))) {
       Write-Warning "skipping '$skill' (no SKILL.md)"; continue
     }
     $out = Join-Path $SrcDir "$skill.zip"
     if (Test-Path $out) { Remove-Item $out -Force }
-    Compress-Archive -Path (Join-Path $SrcDir $skill) -DestinationPath $out
+    # Build the zip with forward-slash entry names. Windows PowerShell 5.1's
+    # Compress-Archive writes backslash separators, which Claude's Skills
+    # uploader rejects as "path with invalid characters".
+    $zip = [System.IO.Compression.ZipFile]::Open($out, [System.IO.Compression.ZipArchiveMode]::Create)
+    try {
+      foreach ($f in Get-ChildItem -Recurse -File $skillDir) {
+        $rel = $f.FullName.Substring($SrcDir.Length).TrimStart('\', '/') -replace '\\', '/'
+        [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $f.FullName, $rel) | Out-Null
+      }
+    } finally { $zip.Dispose() }
     Write-Host "Built $out"
   }
   Write-Host ""
   Write-Host "To use these in the Claude Desktop app or claude.ai:"
-  Write-Host "  1. Open Settings > Customize > Skills."
-  Write-Host "  2. Click '+ Create skill' and upload the .zip above."
+  Write-Host "  1. Open Settings > Capabilities > Skills (click Customize)."
+  Write-Host "  2. Click '+ Create skill' / 'upload a skill' and pick the .zip above."
   Write-Host "  3. Toggle the skill on."
-  Write-Host "Slash commands (/aus, /tldr, /eli, /huh) are Claude Code only."
+  Write-Host "Slash commands (/aus, /tldr, /eli, /huh) are Claude Code only; on Desktop"
+  Write-Host "just talk ('in plain English', 'tl;dr', 'eli5') and the skill triggers."
   exit 0
 }
 
