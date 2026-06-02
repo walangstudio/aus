@@ -11,7 +11,10 @@ description: >-
   "break this down", "break it down for me", "wait what", "wait, what?", "huh?",
   "I don't get it", "I don't understand this", "I'm lost", "come again",
   "what did that mean", "can you simplify", "make it simple", "explain like I'm
-  new", "so what does this actually do". Use it for jargon-heavy passages,
+  new", "so what does this actually do", "summarize this", "summarise", "in
+  layman's terms", "in plain terms", "bullet points", "key points", "give me an
+  analogy", "use an analogy", "explain with an analogy", "why should I care",
+  "what's the point". Use it for jargon-heavy passages,
   legalese, medical or financial text, code, errors, and dense paragraphs the
   reader just bounced off of. Default to ELI-adult (non-tech) when no mode is
   stated.
