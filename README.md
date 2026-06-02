@@ -1,13 +1,12 @@
 # Artificial Unintelligence Skills
 
-AUS is read "ayos" (Filipino for *all good, sorted*). The name is a joke about
-what it does: Claude dials its own intelligence down to explain things like a
-normal person instead of a whitepaper.
+aus! (read as "ayos", Filipino for *all good, sorted*). AI dials its own
+intelligence down to explain things like a normal person instead of a whitepaper.
 
 Most models, asked to explain a sandwich, start with the invention of bread. This
 does the opposite. Hand it the thing that just broke your brain (a lease clause, a
 doctor's note, an error message) and it says the thing back the way a friend
-would. Claude isn't getting dumber; it's just not showing off.
+would. AI isn't getting dumber; it's just not showing off.
 
 ## What's inside
 
@@ -113,6 +112,27 @@ in all three.
 Copy the `plain-speak/` folder into `~/.claude/skills/` and the contents of
 `commands/` into `~/.claude/commands/`. Keep the `SKILL.md` frontmatter intact: the
 `name` field has to match the folder.
+
+## Update and uninstall
+
+The installer records the version it wrote. Pull the latest and re-run it to
+update; it tells you what it's doing and skips work that's already current.
+
+```bash
+git pull
+./install.sh              # or .\install.ps1   — updates in place
+./install.sh --status     # installed vs. latest on GitHub
+./install.sh --uninstall  # remove the skill and commands
+```
+
+```powershell
+.\install.ps1 -Status     # installed vs. latest on GitHub
+.\install.ps1 -Uninstall  # remove the skill and commands
+```
+
+`--status` does a best-effort check against the published version, so you know
+when an update is out without cloning. Desktop installs are managed in the app's
+Skills list (toggle off or delete there); re-run `--desktop` to rebuild the zip.
 
 ## Try it
 
