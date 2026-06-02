@@ -1,0 +1,2 @@
+# Build artifact from `install.sh --desktop` / `install.ps1 -Desktop`
+*.zip

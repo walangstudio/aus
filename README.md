@@ -1,77 +1,64 @@
 # Artificial Unintelligence Skills
 
-Say the acronym out loud. AUS. "Ayos." It's Filipino for *sorted, all good,
-nailed it.* That's the whole point. You ask, Claude answers like a person, and
-you go "ah, ayos."
+AUS is read "ayos" (Filipino for *all good, sorted*). The name is a joke about
+what it does: Claude dials its own intelligence down to explain things like a
+normal person instead of a whitepaper.
 
-> Claude, but it explains things like a normal human instead of a whitepaper.
-
-Here's the problem with most AI: ask it to explain a sandwich and it starts
-with the invention of bread. Artificial Unintelligence does the opposite. You
-hand it the thing that just broke your brain (a lease clause, a doctor's note,
-an error message, a coworker's Slack that's three paragraphs and zero
-information) and it says the thing again, the way a friend would.
-
-The "unintelligence" bit is the joke. Claude isn't getting dumber. It's just
-not showing off for once.
+Most models, asked to explain a sandwich, start with the invention of bread. This
+does the opposite. Hand it the thing that just broke your brain (a lease clause, a
+doctor's note, an error message) and it says the thing back the way a friend
+would. Claude isn't getting dumber; it's just not showing off.
 
 ## What's inside
 
-One skill so far: `plain-speak`.
+One skill: `plain-speak`. It re-explains text in plain language, tuned to who's
+actually listening. You don't pick a mode. Talk normally and it figures out which
+one you meant: "tl;dr" gets the gist, "explain it for my mom" drops the jargon,
+"wait, what?" backs up and un-confuses the sentence that lost you.
 
-It re-explains things in plain language, tuned to whoever is actually
-listening. A five-year-old and your CFO both deserve to understand the thing.
-They just need different versions of it. You don't pick the version. You talk
-normally and the skill figures out which one you meant. Say "tl;dr" and you get
-the gist. Say "explain it for my mom" and the jargon disappears. Say "wait,
-what?" and it backs up and un-confuses the exact sentence that lost you.
-
-One house rule: the audience is people *outside the jargon*, never "dumb"
-people. Nobody gets talked down to. The only one playing dumb here is the AI,
-and it does it on purpose.
-
-More skills might move in later. The repo is set up to hold a whole collection.
+The audience is always people *outside the jargon*, never "dumb" people. Nobody
+gets talked down to. The repo is laid out to hold more skills later.
 
 ## The modes
 
-You almost never need to name these. Just talk. But here is the full menu.
+You rarely need to name these. The full menu:
 
 | Mode | Talks in terms of |
 |------|-------------------|
 | ELI5 | toys, snacks, animals, very short sentences |
 | ELI10 | video games, school, sports |
 | ELI-teen | group chats, money, real stakes |
-| **ELI-adult (non-tech)** | everyday work and money, zero jargon. this is the default |
-| ELI-grandparent | mail, phone calls, TV, and all the patience in the world |
+| **ELI-adult (non-tech)** | everyday work and money, zero jargon. the default |
+| ELI-grandparent | mail, phone calls, TV, and a lot of patience |
 | TL;DR | the whole thing in one to three sentences |
-| Wait, What | re-explains the one sentence that lost you, for as long as that takes. not a recap |
+| Wait, What | re-explains the one sentence that lost you. not a recap |
 | Bullet brief | the key points, scannable, no wall of text |
 | Analogy-only | one good comparison, carried all the way home |
 | So-what | leads with why you should care, then the details |
-| Unjargon | keeps the one term worth knowing, defines it, evicts the rest |
+| Unjargon | keeps the one term worth knowing, defines it, drops the rest |
 
 ## Shortcuts
 
-The modes all work by just talking. But the ones you reach for most get a short
-slash command, so you don't have to phrase anything:
+The modes you reach for most get a slash command, so you don't have to phrase
+anything:
 
 | Command | What it does |
 |---------|--------------|
-| `/aus [text]` | explain it like a human, plain English, zero jargon (the everyday one) |
+| `/aus [text]` | plain English, zero jargon (the everyday one) |
 | `/tldr [text]` | the gist in one to three sentences |
 | `/eli <age> [text]` | explain like I'm that age. `/eli 5`, `/eli 10`, `/eli grandma` |
 | `/huh [text]` | "wait, what?" re-explains the bit that lost you |
 
 The text is optional. Leave it off and the command works on whatever Claude just
-said, so a bare `/tldr` summarizes the last reply and `/huh` un-confuses it. Pass
-text and it works on that instead.
-
-Everything else still works by talking normally, or with `/plain-speak`, which
-is the skill itself.
+said: bare `/tldr` summarizes the last reply, `/huh` un-confuses it. Pass text and
+it works on that instead. Everything else still works by talking, or with
+`/plain-speak`, the skill itself.
 
 ## Install
 
-The quick way:
+### Claude Code (CLI)
+
+macOS / Linux / Git Bash:
 
 ```bash
 git clone https://github.com/walangstudio/aus.git
@@ -79,20 +66,53 @@ cd aus
 ./install.sh
 ```
 
-That puts the skill in `~/.claude/skills/` and the slash commands in
-`~/.claude/commands/`. Other options:
+Windows (PowerShell):
 
-```bash
-./install.sh --project   # into this project's .claude folder
-./install.sh --dir PATH  # into a .claude folder you choose
+```powershell
+git clone https://github.com/walangstudio/aus.git
+cd aus
+.\install.ps1
 ```
 
-Rather do it by hand? Copy the `plain-speak/` folder into `~/.claude/skills/`
-and the contents of `commands/` into `~/.claude/commands/`. Just keep the
-`SKILL.md` frontmatter intact, since the `name` field has to match the folder.
+That puts the skill in `~/.claude/skills/` and the slash commands in
+`~/.claude/commands/`. Other targets:
 
-Then start a fresh Claude session. Type `/aus` (or `/tldr`, `/eli`, `/huh`), or
-just ask for something in plain English and the skill shows up on its own.
+```bash
+./install.sh --project    # into this project's .claude folder
+./install.sh --dir PATH   # into a .claude folder you choose
+```
+
+```powershell
+.\install.ps1 -Project    # into this project's .claude folder
+.\install.ps1 -Dir PATH   # into a .claude folder you choose
+```
+
+Then start a fresh Claude session and try `/aus`, `/tldr`, `/eli`, `/huh`, or just
+ask for something in plain English.
+
+### Claude Desktop app / claude.ai
+
+The desktop and web apps have no drop-in folder. You upload a skill as a zip. Build
+it:
+
+```bash
+./install.sh --desktop      # macOS / Linux
+```
+
+```powershell
+.\install.ps1 -Desktop      # Windows
+```
+
+That writes `plain-speak.zip`. In the app, open **Settings > Customize > Skills**,
+click **+ Create skill**, upload the zip, and toggle it on. The slash commands are
+Claude Code only and won't appear in the desktop or web app; the skill itself works
+in all three.
+
+### By hand
+
+Copy the `plain-speak/` folder into `~/.claude/skills/` and the contents of
+`commands/` into `~/.claude/commands/`. Keep the `SKILL.md` frontmatter intact: the
+`name` field has to match the folder.
 
 ## Try it
 
@@ -104,4 +124,4 @@ just ask for something in plain English and the skill shows up on its own.
 
 ## License
 
-MIT, walangstudio. Take it, use it, ayos.
+MIT, walangstudio.
