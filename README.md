@@ -57,10 +57,14 @@ slash command, so you don't have to phrase anything:
 
 | Command | What it does |
 |---------|--------------|
-| `/aus <text>` | explain it like a human, plain English, zero jargon (the everyday one) |
-| `/tldr <text>` | the gist in one to three sentences |
-| `/eli <age> <text>` | explain like I'm that age. `/eli 5`, `/eli 10`, `/eli grandma` |
-| `/huh <text>` | "wait, what?" re-explains the bit that lost you |
+| `/aus [text]` | explain it like a human, plain English, zero jargon (the everyday one) |
+| `/tldr [text]` | the gist in one to three sentences |
+| `/eli <age> [text]` | explain like I'm that age. `/eli 5`, `/eli 10`, `/eli grandma` |
+| `/huh [text]` | "wait, what?" re-explains the bit that lost you |
+
+The text is optional. Leave it off and the command works on whatever Claude just
+said, so a bare `/tldr` summarizes the last reply and `/huh` un-confuses it. Pass
+text and it works on that instead.
 
 Everything else still works by talking normally, or with `/plain-speak`, which
 is the skill itself.
