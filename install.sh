@@ -75,10 +75,11 @@ if [ "$DESKTOP" -eq 1 ]; then
   done
   echo
   echo "To use these in the Claude Desktop app or claude.ai:"
-  echo "  1. Open Settings > Customize > Skills."
-  echo "  2. Click '+ Create skill' and upload the .zip above."
+  echo "  1. Open Settings > Capabilities > Skills (click Customize)."
+  echo "  2. Click '+ Create skill' / 'upload a skill' and pick the .zip above."
   echo "  3. Toggle the skill on."
-  echo "Slash commands (/aus, /tldr, /eli, /huh) are Claude Code only."
+  echo "Slash commands (/aus, /tldr, /eli, /huh) are Claude Code only; on Desktop"
+  echo "just talk ('in plain English', 'tl;dr', 'eli5') and the skill triggers."
   exit 0
 fi
 

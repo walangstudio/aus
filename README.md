@@ -108,10 +108,11 @@ it:
 .\install.ps1 -Desktop      # Windows
 ```
 
-That writes `plain-speak.zip`. In the app, open **Settings > Customize > Skills**,
-click **+ Create skill**, upload the zip, and toggle it on. The slash commands are
-Claude Code only and won't appear in the desktop or web app; the skill itself works
-in all three.
+That writes `plain-speak.zip`. In the app, open **Settings > Capabilities >
+Skills** (click **Customize**), then **+ Create skill** / **upload a skill**, pick
+the zip, and toggle it on. The slash commands are Claude Code only and won't appear
+in the desktop or web app; there you trigger the skill by talking ("in plain
+English", "tl;dr", "eli5"). The skill itself works in all three.
 
 ### By hand
 
