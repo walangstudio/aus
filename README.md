@@ -1,6 +1,6 @@
 # Artificial Unintelligence Skills
 
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/walangstudio/aus/blob/main/VERSION)
+[![version](https://img.shields.io/github/v/release/walangstudio/aus?label=version)](https://github.com/walangstudio/aus/releases/latest)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-skill-d97757)
