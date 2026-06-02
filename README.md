@@ -48,7 +48,7 @@ anything:
 | `/eli <age> [text]` | explain like I'm that age. `/eli 5`, `/eli 10`, `/eli grandma` |
 | `/huh [text]` | "wait, what?" re-explains the bit that lost you |
 
-The text is optional. Leave it off and the command works on whatever Claude just
+The text is optional. Leave it off and the command works on whatever AI just
 said: bare `/tldr` summarizes the last reply, `/huh` un-confuses it. Pass text and
 it works on that instead. Everything else still works by talking, or with
 `/plain-speak`, the skill itself.
@@ -70,8 +70,14 @@ Windows (PowerShell):
 ```powershell
 git clone https://github.com/walangstudio/aus.git
 cd aus
-.\install.ps1
+powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
+
+`-ExecutionPolicy Bypass` is per-process; it lets this one run without changing
+your machine's policy. Plain `.\install.ps1` works too if your policy already
+allows local scripts (`RemoteSigned` or looser). On PowerShell 7+, swap
+`powershell` for `pwsh`. Prefix any of the commands below the same way if they're
+blocked.
 
 That puts the skill in `~/.claude/skills/` and the slash commands in
 `~/.claude/commands/`. Other targets:
