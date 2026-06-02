@@ -4,17 +4,15 @@ description: >-
   Re-explain any text, concept, message, error, or document in plain language
   tuned to the listener. Trigger this WHENEVER the user wants something made
   easier to understand, even if they don't name a mode. Fires on: "explain this
-  simply", "in plain English", "eli5", "explain like I'm 5", "explain like I'm
-  10", "explain it for my mom", "explain for my grandma", "no jargon",
-  "non-technical", "tl;dr", "tldr", "recap this", "give me the gist", "dumb this
-  down", "dumb it down", "what does this mean", "what does this even mean",
-  "break this down", "break it down for me", "wait what", "wait, what?", "huh?",
-  "I don't get it", "I don't understand this", "I'm lost", "come again",
-  "what did that mean", "can you simplify", "make it simple", "explain like I'm
-  new", "so what does this actually do". Use it for jargon-heavy passages,
-  legalese, medical or financial text, code, errors, and dense paragraphs the
-  reader just bounced off of. Default to ELI-adult (non-tech) when no mode is
-  stated.
+  simply", "in plain English", "in layman's terms", "no jargon", "non-technical",
+  "eli5", "explain like I'm 5/10", "explain it for my mom", "for my grandma",
+  "tl;dr", "summarize this", "give me the gist", "recap this", "dumb it down",
+  "what does this mean", "break it down", "wait, what?", "huh?", "I don't get it",
+  "I'm lost", "come again", "can you simplify", "make it simple", "bullet points",
+  "key points", "give me an analogy", "why should I care", "what's the point".
+  Use it for jargon-heavy passages, legalese, medical or financial text, code,
+  errors, and dense paragraphs the reader just bounced off of. Default to
+  ELI-adult (non-tech) when no mode is stated.
 ---
 
 # Plain Speak
