@@ -190,6 +190,10 @@ Phrase the explanation inside the listener's everyday world.
 
 Apply these in every mode:
 
+- **Default to what was just said.** If the skill is invoked with no text to
+  work on, the target is the most recent assistant reply (or the passage the
+  user just pasted). They are asking you to redo that, not waiting to hand you
+  more. Do not ask "what would you like me to explain"; explain the last thing.
 - **Never insult or condescend to the reader.** The reader is smart and busy or
   simply new to the topic. The humor is the AI playing dumb on purpose — never
   at the reader's expense.
