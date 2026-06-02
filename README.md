@@ -1,68 +1,58 @@
 # Artificial Unintelligence Skills
 
-**AUS** — say it out loud. "Ayos." *Sorted. All good. Nailed it.* That's the
-whole pitch: you ask, Claude answers like an actual person, and you go "ah,
-ayos."
+Say the acronym out loud. AUS. "Ayos." It's Filipino for *sorted, all good,
+nailed it.* That's the whole point. You ask, Claude answers like a person, and
+you go "ah, ayos."
 
 > Claude, but it explains things like a normal human instead of a whitepaper.
 
-Most AI, asked to explain a sandwich, opens with the history of bread. This
-doesn't. **Artificial Unintelligence** is a Claude skill that takes whatever
-just fried your brain — a lease clause, a doctor's note, an error message, a
-coworker's Slack that's three paragraphs and zero information — and says it
-again the way a friend would.
+Here's the problem with most AI: ask it to explain a sandwich and it starts
+with the invention of bread. Artificial Unintelligence does the opposite. You
+hand it the thing that just broke your brain (a lease clause, a doctor's note,
+an error message, a coworker's Slack that's three paragraphs and zero
+information) and it says the thing again, the way a friend would.
 
-The "unintelligence" is the bit. Claude isn't getting dumber. It's just
-refusing to show off. Big difference.
+The "unintelligence" bit is the joke. Claude isn't getting dumber. It's just
+not showing off for once.
 
-## What's in here
+## What's inside
 
-Right now, one skill: **`plain-speak`**.
+One skill so far: `plain-speak`.
 
-It re-explains things in plain language, tuned to *who's actually listening*.
-A five-year-old and your CFO both deserve to understand the thing — they just
-need different versions. You don't pick the version; you talk normally and the
-skill figures it out. Say "tl;dr" and you get the gist. Say "explain it for my
-mom" and it drops the jargon. Say "wait, what?" and it backs up and un-confuses
-the exact sentence that lost you.
+It re-explains things in plain language, tuned to whoever is actually
+listening. A five-year-old and your CFO both deserve to understand the thing.
+They just need different versions of it. You don't pick the version. You talk
+normally and the skill figures out which one you meant. Say "tl;dr" and you get
+the gist. Say "explain it for my mom" and the jargon disappears. Say "wait,
+what?" and it backs up and un-confuses the exact sentence that lost you.
 
-(One house rule: the audience is *people outside the jargon*, never "dumb"
+One house rule: the audience is people *outside the jargon*, never "dumb"
 people. Nobody gets talked down to. The only one playing dumb here is the AI,
-and it's doing it on purpose.)
+and it does it on purpose.
 
-More skills may move in later. The repo's built to hold a collection.
+More skills might move in later. The repo is set up to hold a whole collection.
 
 ## The modes
 
-You rarely need to name these — just talk. But here's the menu:
+You almost never need to name these. Just talk. But here is the full menu.
 
-**Explain it for a human of a certain age**
-
-| Mode | Speaks in terms of |
-|------|--------------------|
+| Mode | Talks in terms of |
+|------|-------------------|
 | ELI5 | toys, snacks, animals, very short sentences |
 | ELI10 | video games, school, sports |
 | ELI-teen | group chats, money, real stakes |
-| **ELI-adult (non-tech)** | everyday work and money, zero jargon — *the default* |
+| **ELI-adult (non-tech)** | everyday work and money, zero jargon. this is the default |
 | ELI-grandparent | mail, phone calls, TV, and all the patience in the world |
-
-**Make it shorter, or make it click**
-
-- **TL;DR** — the whole thing in one to three sentences.
-- **Wait, What** — you read a sentence and your brain slid right off it. This
-  re-explains *that* sentence until it sticks. Not a recap, not necessarily
-  shorter — just clear.
-- **Bullet brief** — the key points, scannable, no wall of text.
-
-**Show off (a little)**
-
-- **Analogy-only** — one good comparison, carried all the way home.
-- **So-what** — leads with why you should care, then the details.
-- **Unjargon** — keeps the *one* term worth knowing, defines it, evicts the rest.
+| TL;DR | the whole thing in one to three sentences |
+| Wait, What | re-explains the one sentence that lost you, for as long as that takes. not a recap |
+| Bullet brief | the key points, scannable, no wall of text |
+| Analogy-only | one good comparison, carried all the way home |
+| So-what | leads with why you should care, then the details |
+| Unjargon | keeps the one term worth knowing, defines it, evicts the rest |
 
 ## Install
 
-Clone it and run the installer:
+The quick way:
 
 ```bash
 git clone https://github.com/walangstudio/aus.git
@@ -70,29 +60,29 @@ cd aus
 ./install.sh
 ```
 
-That drops the skill into `~/.claude/skills/`. Options:
+That copies the skill into `~/.claude/skills/`. Other options:
 
 ```bash
-./install.sh              # just for you (~/.claude/skills)
-./install.sh --project    # into the current project (./.claude/skills)
-./install.sh --dir PATH   # wherever you want it
+./install.sh --project   # into this project's .claude/skills
+./install.sh --dir PATH  # anywhere you want it
 ```
 
-Prefer to do it by hand? Copy the `plain-speak/` folder into your skills
-directory (`~/.claude/skills/plain-speak/`). Keep the `SKILL.md` frontmatter
-intact — the `name` has to match the folder.
+Rather do it by hand? Copy the `plain-speak/` folder into your skills directory
+(`~/.claude/skills/plain-speak/`). Just keep the `SKILL.md` frontmatter intact,
+since the `name` field has to match the folder.
 
-Either way: start a fresh Claude session and just ask for something in plain
-English. The skill wakes up on its own.
+Then start a fresh Claude session and ask for something in plain English. The
+skill shows up on its own. You can also trigger it on purpose by typing
+`/plain-speak`.
 
 ## Try it
 
 - "Explain this insurance clause in plain English."
-- "ELI5: what's a blockchain?"
+- "ELI5: what is a blockchain?"
 - "'The funds are held in escrow pending closing.' wait, what?"
 - "TL;DR this contract."
 - "Explain two-factor authentication for my grandma."
 
 ## License
 
-[MIT](LICENSE) © walangstudio. Take it, use it, ayos.
+MIT, walangstudio. Take it, use it, ayos.
